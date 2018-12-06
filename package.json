@@ -1,0 +1,13 @@
+{
+  "name": "test",
+  "version": "1.0.0",
+  "description": "",
+  "repository": "",
+  "keywords": "",
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "bignumber.js": "^8.0.1",
+    "fibos.js": "^0.3.3"
+  }
+}
