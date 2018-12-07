@@ -47,7 +47,7 @@ function getPercent() {
             }
         })
     }
-    console.log(result);
+    // console.log(result);
     return price;
 }
-getPercent();
+console.log(getPercent());
