@@ -9,6 +9,7 @@ let rank_bp_error=function(){
 
 	let data=new Array();
 	for(let i=0;i<post.length;i++){
+		// 有故障时间的节点详细信息
 		if (post[i].last_abnormal_time && post[i].last_abnormal_time >0){
 			data.push(post[i]);
 		}
