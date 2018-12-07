@@ -3,7 +3,7 @@ const db=require("db");
 var mysql = db.open("mysql://root:rootroot@127.0.0.1:3306/fibos_chain");
 
 
-function readData(){
+let readData=function(){
 	//当前所有注册用户数
 	var result=mysql.execute("select count(0) user_num from actions");
 	// console.log("注册用户数:"+result[0].user_num);
@@ -20,21 +20,26 @@ function readData(){
 	var max_action_auth=JSON.parse(result5[0].authorization)[0];
 	var max_action_auth_num=result5[0].count_auth;
 
-	// 通过跨链转账转入的用户
-	var result4=mysql.execute("select data from actions where data like '%fiboscouncil%'");
-	let n= mysql.execute("select count(id) as count from actions where data like '%to fiboscouncil%'");
+	
+	var result4=mysql.execute("select data from actions where `action_name` like '%transfer' ;");
+	let n= mysql.execute("select count(id) as count from actions where `action_name` like '%transfer' ;");
+
+	// 兑出EOS排行榜
 	var transfer_to_ranking=new Array();
 	for(let i=0;i<n[0].count;i++){
-		try{
+		if (JSON.parse(result4[i].data).to==="fiboscouncil"){
 			transfer_to_ranking.push(JSON.parse(result4[i].data).quantity.quantity);
-		}
-		catch(e){
-			console.log();
 		}
 	}
 
+	//充值EOS排行榜
+	var transfer_from_ranking=new Array();
+	for(let i=0;i<n[0].count;i++){
+		if (JSON.parse(result4[i].data).from==="fiboscouncil"){
+			transfer_to_ranking.push(JSON.parse(result4[i].data).quantity.quantity);
+		}
+	}
 	
-
 	// 兑换EOS排行榜,
 	var exchange_ranking=new Array();
 	var result6=mysql.execute("select data from actions where `action_name` like '%exchange%' ;");
@@ -62,6 +67,7 @@ function readData(){
 	data={
 
 		exchange_ranking,      //兑换EOS排行榜
+		transfer_from_ranking,  //充值EOS排行榜
 		transfer_to_ranking,   //兑出EOS排行榜
 		max_action_auth,       //每月操作action最多的用户
 		max_action_auth_num,   //操作次数
