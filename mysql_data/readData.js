@@ -1,17 +1,15 @@
 
 const db=require("db");
-var mysql = db.open("mysql://root:rootroot@127.0.0.1:3306/fibos_chain");
+var mysql = db.open("mysql://root:123456@127.0.0.1:3306/fibos_chain");
 
 
 let readData=function(){
 	//当前所有注册用户数
 	var result=mysql.execute("select count(0) user_num from actions");
-	// console.log("注册用户数:"+result[0].user_num);
 	register_num=result[0].user_num;
 
 	//使用钱包注册的用户数
 	var result2=mysql.execute("select count(id) fo_user_num from actions where authorization='fibosmaster1' ");
-	// console.log("钱包每日增长数:"+result2[0].fo_user_num);
 	fo_add=result2[0].fo_user_num;
 
 
@@ -66,15 +64,15 @@ let readData=function(){
 
 	data={
 
-		exchange_ranking,      //兑换EOS排行榜
+		exchange_ranking,       //兑换EOS排行榜
 		transfer_from_ranking,  //充值EOS排行榜
-		transfer_to_ranking,   //兑出EOS排行榜
-		max_action_auth,       //每月操作action最多的用户
-		max_action_auth_num,   //操作次数
-		register_num,          //注册用户数
-		fo_add,                //使用钱包注册的用户
-		action_sort_num,       //action种类数量
-		setcode                //部署合约数量
+		transfer_to_ranking,    //兑出EOS排行榜
+		max_action_auth,        //每月操作action最多的用户
+		max_action_auth_num,    //操作次数
+		register_num,           //注册用户数
+		fo_add,                 //使用钱包注册的用户
+		action_sort_num,        //action种类数量
+		setcode                 //部署合约数量
 	}
 
 	return data;
