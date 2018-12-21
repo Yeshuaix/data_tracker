@@ -18,6 +18,7 @@
 
 ### 4.mysql_data
 > 框架 fibos_tracker 会对链上的数据进行自动抓取,在 fibos_tracker 的ORM会自动在 fibos_chain 数据库中自动创建数据表,并向表中自动写入数据
+
 **通过命令 fibos readData.js 来读取mysql表中数据:**
 * 兑换 EOS 排行榜
 * 兑出 EOS 排行榜
