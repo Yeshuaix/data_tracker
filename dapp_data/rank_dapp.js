@@ -1,4 +1,4 @@
-// 钱包dapp上线排行
+// dapp上线排行
 
 const http=require("http");
 
