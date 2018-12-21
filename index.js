@@ -25,7 +25,7 @@ fibos.load("chain_api");
 
 //[fibos-tracker]
 const Tracker = require('fibos-tracker');
-Tracker.Config.DBconnString = "mysql://root:rootroot@127.0.0.1/fibos_chain";
+Tracker.Config.DBconnString = "mysql://root:123456@127.0.0.1/fibos_chain";
 
 Tracker.Config.isSyncSystemBlock = true;
 
