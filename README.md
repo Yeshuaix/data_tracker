@@ -1,5 +1,5 @@
 # data_tracker
-**获取运营数据:**
+**获取运营基本需求数据:**
 ### 1.bp_data
 **获取bp网站上的数据:**
 * 通过命令 fibos rank_bp.js 获取当前bp排行情况;
@@ -17,14 +17,14 @@
 * 通过命令 fibos rank_dapp.js 获取dapp上线排行
 
 ### 4.mysql_data
-> 框架 fibos_tracker 会对链上的数据进行自动抓取,在 fibos_tracker 的ORM会自动在fibos_chain数据库中自动创建数据表,并向表中自动写入数据
+> 框架 fibos_tracker 会对链上的数据进行自动抓取,在 fibos_tracker 的ORM会自动在 fibos_chain 数据库中自动创建数据表,并向表中自动写入数据
 **通过命令 fibos readData.js 来读取mysql表中数据:**
-* 兑换EOS排行榜
-* 兑出EOS排行榜
-* 充值EOS排行榜
-* 每月操作action最多的用户
-* 每月操作action最多用户的操作次数
+* 兑换 EOS 排行榜
+* 兑出 EOS 排行榜
+* 充值 EOS 排行榜
+* 每月操作 action 最多的用户
+* 每月操作 action 最多用户的操作次数
 * 注册用户数
 * 使用钱包注册的用户
-* action种类数量
+* action 种类数量
 * 部署合约数量
