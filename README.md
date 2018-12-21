@@ -1,5 +1,5 @@
 # data_tracker
-** 获取运营数据:**
+**获取运营数据:**
 ### 1.bp_data
 **获取bp网站上的数据:**
 * 通过命令 fibos rank_bp.js 获取当前bp排行情况;
